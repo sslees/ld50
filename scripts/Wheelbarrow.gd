@@ -6,6 +6,7 @@ signal money
 export var speed = 1000
 
 var screen
+var down = false
 
 
 func _ready():
@@ -16,15 +17,24 @@ func _ready():
 	connect("money", $"../HUD", "_on_money")
 
 
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		down = event.pressed
+
+
 func _process(delta):
-	var velocity = 0
-	
-	if Input.is_action_pressed("left"):
-		velocity -= 1
-	if Input.is_action_pressed("right"):
-		velocity += 1
+	var dist = speed * delta
+	var dir = 0
+	var pos = get_viewport().get_mouse_position().x
+
+	if Input.is_action_pressed("left") or \
+			down and screen.x / 2 < pos and pos < self.position.x - dist:
+		dir -= 1
+	if Input.is_action_pressed("right") or \
+			down and self.position.x + dist < pos and pos < screen.x:
+		dir += 1
 	position.x = clamp(
-		position.x + velocity * speed * delta,
+		position.x + dir * dist,
 		screen.x / 2,
 		screen.x)
 

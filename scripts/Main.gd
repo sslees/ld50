@@ -5,6 +5,7 @@ export(PackedScene) var trash_scene
 
 export var trash_ratio = 0.2
 
+var trash = true
 var screen
 
 
@@ -14,8 +15,9 @@ func _ready():
 
 
 func _on_DropTimer_timeout():
-	var drop = \
-		(trash_scene if randf() < trash_ratio else money_scene).instance()
+	var drop = (
+		trash_scene if trash and randf() < trash_ratio else money_scene
+	).instance()
 
 	drop.position = Vector2(
 		rand_range(screen.x * 1.1 / 2 , screen.x * 1.9 / 2),

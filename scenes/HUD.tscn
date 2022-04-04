@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/munro_dynamicfontdata.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=2]
 [ext_resource path="res://fonts/button_font.tres" type="DynamicFont" id=3]
 
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=1]
-size = 72
+size = 61
 font_data = ExtResource( 1 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -14,52 +18,108 @@ script = ExtResource( 2 )
 [node name="Store" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 330.0
-margin_top = -480.0
-margin_right = 336.0
+margin_left = 128.0
+margin_top = -440.0
+margin_right = 812.0
+margin_bottom = 128.0
 
-[node name="Label" type="Label" parent="Store"]
-margin_right = 360.0
-margin_bottom = 82.0
-custom_colors/font_color = Color( 0.145098, 0.145098, 0.145098, 1 )
+[node name="Info" type="HBoxContainer" parent="Store"]
+margin_right = 700.0
+margin_bottom = 69.0
+
+[node name="Speed" type="Label" parent="Store/Info"]
+margin_top = 17.0
+margin_right = 348.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.227451, 0.227451, 0.227451, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Speed: 1"
+align = 1
+
+[node name="Funds" type="Label" parent="Store/Info"]
+margin_left = 352.0
+margin_right = 700.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.227451, 0.227451, 0.227451, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Funds: $0"
 align = 1
 
-[node name="Reset" type="Button" parent="Store"]
-margin_top = 86.0
-margin_right = 360.0
-margin_bottom = 139.0
-custom_fonts/font = ExtResource( 3 )
-text = "Reset Clock ($50)"
+[node name="HBoxContainer" type="HBoxContainer" parent="Store"]
+margin_top = 73.0
+margin_right = 700.0
+margin_bottom = 183.0
+size_flags_horizontal = 3
 
-[node name="Add1M" type="Button" parent="Store"]
-margin_top = 143.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Store/HBoxContainer"]
 margin_right = 360.0
-margin_bottom = 196.0
-custom_fonts/font = ExtResource( 3 )
-text = "Add 1 Minute ($30)"
+margin_bottom = 110.0
+size_flags_horizontal = 3
 
-[node name="Add15S" type="Button" parent="Store"]
-margin_top = 200.0
+[node name="DropMore" type="Button" parent="Store/HBoxContainer/VBoxContainer"]
 margin_right = 360.0
-margin_bottom = 253.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Drop 2x Items ($5)"
+
+[node name="DropLess" type="Button" parent="Store/HBoxContainer/VBoxContainer"]
+margin_top = 57.0
+margin_right = 360.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Drop 0.5x Items ($20)"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Store/HBoxContainer"]
+margin_left = 364.0
+margin_right = 700.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+
+[node name="Add15S" type="Button" parent="Store/HBoxContainer/VBoxContainer2"]
+margin_right = 336.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Add 15 Seconds ($10)"
 
-[node name="DropMore" type="Button" parent="Store"]
-margin_top = 257.0
-margin_right = 360.0
-margin_bottom = 310.0
+[node name="Add1M" type="Button" parent="Store/HBoxContainer/VBoxContainer2"]
+margin_top = 57.0
+margin_right = 336.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "Drop 2x  Items ($5)"
+text = "Add 1 Minute ($30)"
 
-[node name="DropLess" type="Button" parent="Store"]
-margin_top = 314.0
-margin_right = 360.0
-margin_bottom = 367.0
+[node name="NoTrash" type="Button" parent="Store"]
+margin_top = 187.0
+margin_right = 700.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "Drop 0.5x Items ($20)"
+text = "No Trash 30 Seconds ($100)"
+
+[node name="End" type="Button" parent="Store"]
+margin_top = 244.0
+margin_right = 700.0
+margin_bottom = 297.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Fast-Forward to Explosion!"
+
+[node name="Instructions" type="Label" parent="Store"]
+margin_top = 301.0
+margin_right = 700.0
+margin_bottom = 412.0
+custom_colors/font_color = Color( 0.403922, 0.403922, 0.403922, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Use keys A and D to move.
+Catch money, not trash.
+Buy time to delay the explosion."
+align = 1
 
 [node name="GameOver" type="AcceptDialog" parent="."]
 pause_mode = 2
@@ -67,17 +127,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -320.0
-margin_top = -92.0
-margin_right = -112.0
-margin_bottom = -13.0
+margin_left = -60.5
+margin_top = -29.0
+margin_right = 60.5
+margin_bottom = 29.0
 rect_scale = Vector2( 3, 3 )
 popup_exclusive = true
 window_title = "Game Over"
 dialog_autowrap = true
 
-[connection signal="pressed" from="Store/Reset" to="." method="_on_Reset_pressed"]
-[connection signal="pressed" from="Store/Add1M" to="." method="_on_Add1M_pressed"]
-[connection signal="pressed" from="Store/Add15S" to="." method="_on_Add15S_pressed"]
-[connection signal="pressed" from="Store/DropMore" to="." method="_on_DropMore_pressed"]
-[connection signal="pressed" from="Store/DropLess" to="." method="_on_DropLess_pressed"]
+[connection signal="pressed" from="Store/HBoxContainer/VBoxContainer/DropMore" to="." method="_on_DropMore_pressed"]
+[connection signal="pressed" from="Store/HBoxContainer/VBoxContainer/DropLess" to="." method="_on_DropLess_pressed"]
+[connection signal="pressed" from="Store/HBoxContainer/VBoxContainer2/Add15S" to="." method="_on_Add15S_pressed"]
+[connection signal="pressed" from="Store/HBoxContainer/VBoxContainer2/Add1M" to="." method="_on_Add1M_pressed"]
+[connection signal="pressed" from="Store/NoTrash" to="." method="_on_NoTrash_pressed"]
+[connection signal="pressed" from="Store/End" to="." method="_on_End_pressed"]
+[connection signal="confirmed" from="GameOver" to="." method="_on_GameOver_confirmed"]
