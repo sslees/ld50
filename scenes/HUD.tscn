@@ -18,18 +18,18 @@ script = ExtResource( 2 )
 [node name="Store" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 128.0
-margin_top = -440.0
-margin_right = 812.0
-margin_bottom = 128.0
+margin_left = 64.0
+margin_top = -568.0
+margin_right = 896.0
+margin_bottom = -64.0
 
 [node name="Info" type="HBoxContainer" parent="Store"]
-margin_right = 700.0
+margin_right = 832.0
 margin_bottom = 69.0
 
 [node name="Speed" type="Label" parent="Store/Info"]
 margin_top = 17.0
-margin_right = 348.0
+margin_right = 414.0
 margin_bottom = 52.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0.227451, 0.227451, 0.227451, 1 )
@@ -38,8 +38,8 @@ text = "Speed: 1"
 align = 1
 
 [node name="Funds" type="Label" parent="Store/Info"]
-margin_left = 352.0
-margin_right = 700.0
+margin_left = 418.0
+margin_right = 832.0
 margin_bottom = 69.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0.227451, 0.227451, 0.227451, 1 )
@@ -49,71 +49,162 @@ align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Store"]
 margin_top = 73.0
-margin_right = 700.0
-margin_bottom = 183.0
+margin_right = 832.0
+margin_bottom = 237.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Store/HBoxContainer"]
-margin_right = 360.0
-margin_bottom = 110.0
+margin_right = 406.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 
 [node name="DropMore" type="Button" parent="Store/HBoxContainer/VBoxContainer"]
-margin_right = 360.0
-margin_bottom = 53.0
+margin_right = 406.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "Drop 2x Items ($5)"
+text = "Double Speed ($5)"
+
+[node name="HSeparator" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 406.0
+margin_bottom = 72.0
+
+[node name="HSeparator3" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 406.0
+margin_bottom = 80.0
+
+[node name="HSeparator4" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 406.0
+margin_bottom = 88.0
+
+[node name="HSeparator2" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer"]
+margin_top = 92.0
+margin_right = 406.0
+margin_bottom = 96.0
 
 [node name="DropLess" type="Button" parent="Store/HBoxContainer/VBoxContainer"]
-margin_top = 57.0
-margin_right = 360.0
-margin_bottom = 110.0
+margin_top = 100.0
+margin_right = 406.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "Drop 0.5x Items ($20)"
+text = "Halve Speed ($20)"
+
+[node name="VSeparator" type="VSeparator" parent="Store/HBoxContainer"]
+margin_left = 410.0
+margin_right = 414.0
+margin_bottom = 164.0
+
+[node name="VSeparator2" type="VSeparator" parent="Store/HBoxContainer"]
+margin_left = 418.0
+margin_right = 422.0
+margin_bottom = 164.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Store/HBoxContainer"]
-margin_left = 364.0
-margin_right = 700.0
-margin_bottom = 110.0
+margin_left = 426.0
+margin_right = 832.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 
 [node name="Add15S" type="Button" parent="Store/HBoxContainer/VBoxContainer2"]
-margin_right = 336.0
-margin_bottom = 53.0
+margin_right = 406.0
+margin_bottom = 64.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "Add 15 Seconds ($10)"
+text = "Add 15 sec ($10)"
+
+[node name="HSeparator" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer2"]
+margin_top = 68.0
+margin_right = 406.0
+margin_bottom = 72.0
+
+[node name="HSeparator3" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer2"]
+margin_top = 76.0
+margin_right = 406.0
+margin_bottom = 80.0
+
+[node name="HSeparator4" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer2"]
+margin_top = 84.0
+margin_right = 406.0
+margin_bottom = 88.0
+
+[node name="HSeparator2" type="HSeparator" parent="Store/HBoxContainer/VBoxContainer2"]
+margin_top = 92.0
+margin_right = 406.0
+margin_bottom = 96.0
 
 [node name="Add1M" type="Button" parent="Store/HBoxContainer/VBoxContainer2"]
-margin_top = 57.0
-margin_right = 336.0
-margin_bottom = 110.0
+margin_top = 100.0
+margin_right = 406.0
+margin_bottom = 164.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "Add 1 Minute ($30)"
+text = "Add 1 min ($30)"
+
+[node name="HSeparator" type="HSeparator" parent="Store"]
+margin_top = 241.0
+margin_right = 832.0
+margin_bottom = 245.0
+
+[node name="HSeparator7" type="HSeparator" parent="Store"]
+margin_top = 249.0
+margin_right = 832.0
+margin_bottom = 253.0
+
+[node name="HSeparator8" type="HSeparator" parent="Store"]
+margin_top = 257.0
+margin_right = 832.0
+margin_bottom = 261.0
+
+[node name="HSeparator4" type="HSeparator" parent="Store"]
+margin_top = 265.0
+margin_right = 832.0
+margin_bottom = 269.0
 
 [node name="NoTrash" type="Button" parent="Store"]
-margin_top = 187.0
-margin_right = 700.0
-margin_bottom = 240.0
+margin_top = 273.0
+margin_right = 832.0
+margin_bottom = 337.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 3 )
-text = "No Trash 30 Seconds ($100)"
+text = "No Trash 30 sec ($100)"
+
+[node name="HSeparator2" type="HSeparator" parent="Store"]
+margin_top = 341.0
+margin_right = 832.0
+margin_bottom = 345.0
+
+[node name="HSeparator3" type="HSeparator" parent="Store"]
+margin_top = 349.0
+margin_right = 832.0
+margin_bottom = 353.0
+
+[node name="HSeparator5" type="HSeparator" parent="Store"]
+margin_top = 357.0
+margin_right = 832.0
+margin_bottom = 361.0
+
+[node name="HSeparator6" type="HSeparator" parent="Store"]
+margin_top = 365.0
+margin_right = 832.0
+margin_bottom = 369.0
 
 [node name="End" type="Button" parent="Store"]
-margin_top = 244.0
-margin_right = 700.0
-margin_bottom = 297.0
-size_flags_horizontal = 3
+margin_left = 102.0
+margin_top = 373.0
+margin_right = 730.0
+margin_bottom = 437.0
+size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 3 )
-text = "Fast-Forward to Explosion!"
+text = "  Fast-Forward to Explosion!  "
 
 [node name="Instructions" type="Label" parent="Store"]
-margin_top = 301.0
-margin_right = 700.0
-margin_bottom = 412.0
+margin_top = 441.0
+margin_right = 832.0
+margin_bottom = 552.0
 custom_colors/font_color = Color( 0.403922, 0.403922, 0.403922, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Use keys A and D to move.
@@ -135,6 +226,9 @@ rect_scale = Vector2( 3, 3 )
 popup_exclusive = true
 window_title = "Game Over"
 dialog_autowrap = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 
 [connection signal="pressed" from="Store/HBoxContainer/VBoxContainer/DropMore" to="." method="_on_DropMore_pressed"]
 [connection signal="pressed" from="Store/HBoxContainer/VBoxContainer/DropLess" to="." method="_on_DropLess_pressed"]

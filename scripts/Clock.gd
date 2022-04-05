@@ -4,6 +4,7 @@ export var start_time = 30
 
 var time
 var total = 0
+var explosion_wav = preload("res://audio/explosion.wav")
 
 
 func _ready():
@@ -27,6 +28,8 @@ func stop():
 		"You delayed the inevitable explosion for %d:%02d." \
 		% [total / 60, total % 60]
 	$"../HUD/GameOver".show()
+	$"../HUD/Audio".stream = explosion_wav
+	$"../HUD/Audio".play()
 
 
 func add_time(seconds):

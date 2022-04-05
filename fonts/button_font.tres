@@ -3,5 +3,5 @@
 [ext_resource path="res://fonts/munro_dynamicfontdata.tres" type="DynamicFontData" id=1]
 
 [resource]
-size = 41
+size = 51
 font_data = ExtResource( 1 )
